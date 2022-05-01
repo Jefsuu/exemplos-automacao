@@ -18,7 +18,7 @@ Essa automação é muito útil para geração de documentos que seguem um padr�
 
 ---
 #### [Preenchimento em sistemas web](https://github.com/Jefsuu/exemplos-automacao/blob/main/preenchimento_sistemas-web.ipynb)
-É um código que pega informações de algum documento, word neste caso, e insere em um sistema web, utilizando selenium para simular a o usuário. Este tipo de automação elimina
+É um código que pega informações de algum documento, word neste caso, e insere em um sistema web, utilizando selenium para simular as ações do usuário. Este tipo de automação elimina
 os intermináveis CTRL+C e CTRL+V de planilhas para sistemas web elimina também erros de inserção por colar informações em campos errados, por exemplo.
 
 **Lembre-se que se você for criar um código assim, é necessário configurar o selenium, então dê uma pesquisada sobre isso**
