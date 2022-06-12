@@ -5,6 +5,11 @@ from itertools import chain
 
 class clean_data():
     def __init__(self, data_objetc, nome, email_columns):
+        """
+        Recebe um objeto do tipo dataframe do pandas,
+        o nome da coluna que seja o identificador e
+        as colunas onde os e-mails estão, devendo ser separas por "," ou ";"
+        """
         if type(email_columns) == str:
             if (',' in email_columns) and (';' not in email_columns):
                 email_columns = email_columns.split(',')
@@ -28,7 +33,10 @@ class clean_data():
 
     
     def clean_names(self):
-        
+        """
+        Limpa os identificadores para melhor padronização e resultado.
+        Utiliza Regex para limpar caracteres que podem gerar algum tipo de interfência, como "/", "\\n" e números
+        """
         self.data[self.nome] = self.data[self.nome].str.strip()
         self.data[self.nome] = self.data[self.nome].str.replace('/', '.')
         self.data[self.nome] = self.data[self.nome].apply(lambda x: re.sub(r'[0-9]', '', x))
@@ -39,6 +47,9 @@ class clean_data():
         return self.data
 
     def clean_emails(self):
+        """
+        Limpa os e-mails e os agrupa pelo o identificador, os separando por ";".
+        """
 
         for i in self.email_columns:
             self.data[i] = self.data[i].str.strip()
@@ -63,6 +74,9 @@ class clean_data():
 
 
     def email_validation(self, x):
+        """
+        Extrai e-mails validos de cada linha do datframe
+        """
         result = re.findall(r'[\w.+-]+@[\w-]+\.[\w.-]+', x)
         return result
 
