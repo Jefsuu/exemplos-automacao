@@ -71,4 +71,4 @@ if __name__ == '__main__':
         "Excel ou CSV",
         "Coluna com o identificados, geralmente o nome",
          "Colunas com os e-mails, seperardos por virgula ou ponto e virgula"
-         )
+        )
